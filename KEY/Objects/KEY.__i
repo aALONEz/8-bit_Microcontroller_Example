@@ -1,0 +1,1 @@
+"Source_Group\KEY.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(.\Source_Group;.\Header_Group) DEBUG OBJECTEXTEND PRINT(.\Listings\KEY.lst) OBJECT(.\Objects\KEY.obj)

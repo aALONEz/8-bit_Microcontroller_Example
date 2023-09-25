@@ -1,0 +1,6 @@
+".\Objects\Delay.obj",
+".\Objects\LED.obj",
+".\Objects\main.obj",
+".\Objects\KEY.obj" 
+TO ".\Objects\KEY" 
+PRINT(".\Listings\KEY.m51") RAMSIZE(256) 
