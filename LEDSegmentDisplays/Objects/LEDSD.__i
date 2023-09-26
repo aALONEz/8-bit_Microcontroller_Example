@@ -1,0 +1,1 @@
+"Source_Group\LEDSD.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(.\Header_Group;.\Source_Group) DEBUG OBJECTEXTEND PRINT(.\Listings\LEDSD.lst) OBJECT(.\Objects\LEDSD.obj)

@@ -1,0 +1,25 @@
+C51 COMPILER V9.60.7.0   KEY                                                               09/27/2023 00:33:10 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE KEY
+OBJECT MODULE PLACED IN .\Objects\KEY.obj
+COMPILER INVOKED BY: D:\Keil5\C51\BIN\C51.EXE Source_Group\KEY.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Header_Group;.\Source
+                    -_Group) DEBUG OBJECTEXTEND PRINT(.\Listings\KEY.lst) OBJECT(.\Objects\KEY.obj)
+
+line level    source
+
+   1          #include "KEY.h"
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,7 @@
+".\Objects\Delay.obj",
+".\Objects\KEY.obj",
+".\Objects\LED.obj",
+".\Objects\main.obj",
+".\Objects\LEDSD.obj" 
+TO ".\Objects\LEDSegmentDisplays" 
+PRINT(".\Listings\LEDSegmentDisplays.m51") RAMSIZE(256) 

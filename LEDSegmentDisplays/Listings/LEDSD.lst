@@ -1,0 +1,110 @@
+C51 COMPILER V9.60.7.0   LEDSD                                                             09/27/2023 00:44:10 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE LEDSD
+OBJECT MODULE PLACED IN .\Objects\LEDSD.obj
+COMPILER INVOKED BY: D:\Keil5\C51\BIN\C51.EXE Source_Group\LEDSD.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Header_Group;.\Sour
+                    -ce_Group) DEBUG OBJECTEXTEND PRINT(.\Listings\LEDSD.lst) OBJECT(.\Objects\LEDSD.obj)
+
+line level    source
+
+   1          #include "LEDSD.h"
+   2          
+   3          
+   4          
+   5          void DigitalTubeDisplay_Digit(const unsigned char LEDx,Num)
+   6          {
+   7   1              //定义一个数字显示16进制数组  下标对应数字0-9
+   8   1              //举例:想要显示0,那就是ABCDEF,对应引脚输出高电平,其他引脚输出0,也就是0011 1111
+             -,这里B7引脚对应的是最高位,B0对应的是最低位。
+   9   1              const unsigned char DigitalTubeNum[] = {0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};
+  10   1              if(LEDx > 8 && Num > 9)
+  11   1              {
+  12   2                      return;
+  13   2              }
+  14   1              switch(LEDx)
+  15   1              {
+  16   2                      case 1:
+  17   2                      {
+  18   3                              //1 1 1 选择74HC138 Y7引脚使能
+  19   3                              P24 = 1;
+  20   3                              P23 = 1;
+  21   3                              P22 = 1;
+  22   3                              break;
+  23   3                      }
+  24   2                      case 2:
+  25   2                      {
+  26   3                              //1 1 0 选择74HC138 Y6引脚使能
+  27   3                              P24 = 1;
+  28   3                              P23 = 1;
+  29   3                              P22 = 0;
+  30   3                              break;
+  31   3                      }
+  32   2                      case 3:
+  33   2                      {
+  34   3                              //1 0 1 选择74HC138 Y5引脚使能
+  35   3                              P24 = 1;
+  36   3                              P23 = 0;
+  37   3                              P22 = 1;
+  38   3                              break;
+  39   3                      }
+  40   2                      case 4:
+  41   2                      {
+  42   3                              //1 0 0 选择74HC138 Y4引脚使能
+  43   3                              P24 = 1;
+  44   3                              P23 = 0;
+  45   3                              P22 = 0;
+  46   3                              break;
+  47   3                      }
+  48   2                      case 5:
+  49   2                      {
+  50   3                              //0 1 1 选择74HC138 Y3引脚使能
+  51   3                              P24 = 0;
+  52   3                              P23 = 1;
+  53   3                              P22 = 1;
+C51 COMPILER V9.60.7.0   LEDSD                                                             09/27/2023 00:44:10 PAGE 2   
+
+  54   3                              break;
+  55   3                      }
+  56   2                      case 6:
+  57   2                      {
+  58   3                              //0 1 0 选择74HC138 Y2引脚使能
+  59   3                              P24 = 0;
+  60   3                              P23 = 1;
+  61   3                              P22 = 0;
+  62   3                              break;
+  63   3                      }
+  64   2                      case 7:
+  65   2                      {
+  66   3                              //0 0 1 选择74HC138 Y1引脚使能
+  67   3                              P24 = 0;
+  68   3                              P23 = 0;
+  69   3                              P22 = 1;
+  70   3                              break;
+  71   3                      }
+  72   2                      case 8:
+  73   2                      {
+  74   3                              //0 0 0 选择74HC138 Y0引脚使能
+  75   3                              P24 = 0;
+  76   3                              P23 = 0;
+  77   3                              P22 = 0;
+  78   3                              break;
+  79   3                      }
+  80   2              }
+  81   1              P0 = DigitalTubeNum[Num];//74HC245引脚对应P0组IO口,所以这里直接给P0组IO口直接赋值要�
+             -�示数字的对应下标
+  82   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    146    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      13
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
