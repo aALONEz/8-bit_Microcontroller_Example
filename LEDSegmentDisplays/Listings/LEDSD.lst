@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   LEDSD                                                             09/27/2023 00:44:10 PAGE 1   
+C51 COMPILER V9.60.7.0   LEDSD                                                             09/27/2023 21:33:48 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE LEDSD
@@ -62,7 +62,7 @@ line level    source
   51   3                              P24 = 0;
   52   3                              P23 = 1;
   53   3                              P22 = 1;
-C51 COMPILER V9.60.7.0   LEDSD                                                             09/27/2023 00:44:10 PAGE 2   
+C51 COMPILER V9.60.7.0   LEDSD                                                             09/27/2023 21:33:48 PAGE 2   
 
   54   3                              break;
   55   3                      }
@@ -93,11 +93,16 @@ line level    source
   80   2              }
   81   1              P0 = DigitalTubeNum[Num];//74HC245引脚对应P0组IO口,所以这里直接给P0组IO口直接赋值要�
              -�示数字的对应下标
-  82   1      }
+  82   1              //添加延时函数,以达到消影的效果
+  83   1              Delay_ms(1);
+  84   1              //让数码管显示空,以消除拖影。避免将上一个数码管的显示内容带到下一个数码
+             -管显示。
+  85   1              P0 = 0X00;
+  86   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    146    ----
+   CODE SIZE        =    156    ----
    CONSTANT SIZE    =     10    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

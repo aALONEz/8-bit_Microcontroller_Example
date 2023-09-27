@@ -79,4 +79,8 @@ void DigitalTubeDisplay_Digit(const unsigned char LEDx,Num)
 		}
 	}
 	P0 = DigitalTubeNum[Num];//74HC245引脚对应P0组IO口,所以这里直接给P0组IO口直接赋值要显示数字的对应下标
+	//添加延时函数,以达到消影的效果
+	Delay_ms(1);
+	//让数码管显示空,以消除拖影。避免将上一个数码管的显示内容带到下一个数码管显示。
+	P0 = 0X00;
 }

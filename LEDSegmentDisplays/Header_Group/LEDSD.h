@@ -1,4 +1,5 @@
 #include <STC89C5xRC.H>//引入头文件
+#include "Delay.h"
 #ifndef _LEDSD_H_
 #define _LEDSD_H_
 

@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    09/27/2023  00:45:59  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    09/27/2023  21:33:49  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
@@ -27,20 +27,19 @@ LINK MAP OF MODULE:  .\Objects\LEDSegmentDisplays (DELAY)
 
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
-            DATA    0008H     000DH     UNIT         _DATA_GROUP_
-            DATA    0015H     0002H     UNIT         ?DT?_DELAY_MS?DELAY
+            DATA    0008H     000FH     UNIT         _DATA_GROUP_
             DATA    0017H     0002H     UNIT         ?DT?_LED_FLOWING_WATER?LED
             IDATA   0019H     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
             CODE    0003H     00F6H     UNIT         ?C?LIB_CODE
-            CODE    00F9H     0092H     UNIT         ?PR?_DIGITALTUBEDISPLAY_DIGIT?LEDSD
-            CODE    018BH     0054H     UNIT         ?PR?_LED_FLOWING_WATER?LED
-            CODE    01DFH     001AH     UNIT         ?PR?_DELAY_MS?DELAY
-            CODE    01F9H     000CH     UNIT         ?C_C51STARTUP
-            CODE    0205H     000BH     UNIT         ?PR?MAIN?MAIN
-            CODE    0210H     000AH     UNIT         ?CO?LEDSD
+            CODE    00F9H     009CH     UNIT         ?PR?_DIGITALTUBEDISPLAY_DIGIT?LEDSD
+            CODE    0195H     0054H     UNIT         ?PR?_LED_FLOWING_WATER?LED
+            CODE    01E9H     001DH     UNIT         ?PR?MAIN?MAIN
+            CODE    0206H     001AH     UNIT         ?PR?_DELAY_MS?DELAY
+            CODE    0220H     000CH     UNIT         ?C_C51STARTUP
+            CODE    022CH     000AH     UNIT         ?CO?LEDSD
 
 
 
@@ -58,9 +57,12 @@ SEGMENT                                       DATA_GROUP
 
 ?PR?_DIGITALTUBEDISPLAY_DIGIT?LEDSD         0008H    000DH
   +--> ?CO?LEDSD
+  +--> ?PR?_DELAY_MS?DELAY
 
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  09/27/2023  00:45:59  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  09/27/2023  21:33:49  PAGE 2
 
+
+?PR?_DELAY_MS?DELAY                         0015H    0002H
 
 
 
@@ -71,25 +73,25 @@ SYMBOL TABLE OF MODULE:  .\Objects\LEDSegmentDisplays (DELAY)
 
   -------         MODULE        DELAY
   C:0000H         SYMBOL        _ICE_DUMMY_
-  C:01DFH         PUBLIC        _Delay_ms
+  C:0206H         PUBLIC        _Delay_ms
   -------         PROC          _DELAY_MS
   D:0006H         SYMBOL        xms
   -------         DO            
   D:0015H         SYMBOL        i
   D:0016H         SYMBOL        j
   -------         ENDDO         
-  C:01DFH         LINE#         3
-  C:01DFH         LINE#         4
-  C:01DFH         LINE#         5
-  C:01E9H         LINE#         6
-  C:01E9H         LINE#         9
-  C:01EAH         LINE#         10
-  C:01EDH         LINE#         11
-  C:01F0H         LINE#         13
-  C:01F0H         LINE#         14
-  C:01F3H         LINE#         15
-  C:01F6H         LINE#         16
-  C:01F8H         LINE#         17
+  C:0206H         LINE#         3
+  C:0206H         LINE#         4
+  C:0206H         LINE#         5
+  C:0210H         LINE#         6
+  C:0210H         LINE#         9
+  C:0211H         LINE#         10
+  C:0214H         LINE#         11
+  C:0217H         LINE#         13
+  C:0217H         LINE#         14
+  C:021AH         LINE#         15
+  C:021DH         LINE#         16
+  C:021FH         LINE#         17
   -------         ENDPROC       _DELAY_MS
   -------         ENDMOD        DELAY
 
@@ -117,34 +119,34 @@ SYMBOL TABLE OF MODULE:  .\Objects\LEDSegmentDisplays (DELAY)
   D:00E8H         PUBLIC        P4
   D:00A8H         PUBLIC        IE
   D:00B8H         PUBLIC        IP
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  09/27/2023  21:33:49  PAGE 3
+
+
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  09/27/2023  00:45:59  PAGE 3
-
-
-  C:018BH         PUBLIC        _LED_flowing_water
+  C:0195H         PUBLIC        _LED_flowing_water
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
   -------         PROC          _LED_FLOWING_WATER
   D:0017H         SYMBOL        xms
-  C:018BH         LINE#         7
-  C:018FH         LINE#         8
-  C:018FH         LINE#         9
-  C:0192H         LINE#         10
-  C:0199H         LINE#         11
-  C:019CH         LINE#         12
-  C:01A3H         LINE#         13
-  C:01A6H         LINE#         14
-  C:01ADH         LINE#         15
-  C:01B0H         LINE#         16
-  C:01B7H         LINE#         17
-  C:01BAH         LINE#         18
-  C:01C1H         LINE#         19
-  C:01C4H         LINE#         20
-  C:01CBH         LINE#         21
-  C:01CEH         LINE#         22
-  C:01D5H         LINE#         23
-  C:01D8H         LINE#         24
+  C:0195H         LINE#         7
+  C:0199H         LINE#         8
+  C:0199H         LINE#         9
+  C:019CH         LINE#         10
+  C:01A3H         LINE#         11
+  C:01A6H         LINE#         12
+  C:01ADH         LINE#         13
+  C:01B0H         LINE#         14
+  C:01B7H         LINE#         15
+  C:01BAH         LINE#         16
+  C:01C1H         LINE#         17
+  C:01C4H         LINE#         18
+  C:01CBH         LINE#         19
+  C:01CEH         LINE#         20
+  C:01D5H         LINE#         21
+  C:01D8H         LINE#         22
+  C:01DFH         LINE#         23
+  C:01E2H         LINE#         24
   -------         ENDPROC       _LED_FLOWING_WATER
   -------         ENDMOD        LED
 
@@ -157,31 +159,33 @@ SYMBOL TABLE OF MODULE:  .\Objects\LEDSegmentDisplays (DELAY)
   D:00E8H         PUBLIC        P4
   D:00A8H         PUBLIC        IE
   D:00B8H         PUBLIC        IP
-  C:0205H         PUBLIC        main
+  C:01E9H         PUBLIC        main
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
   -------         PROC          MAIN
-  C:0205H         LINE#         3
-  C:0205H         LINE#         4
-  C:0205H         LINE#         6
-  C:020EH         LINE#         7
-  C:020EH         LINE#         8
-  C:020EH         LINE#         9
+  C:01E9H         LINE#         3
+  C:01E9H         LINE#         4
+  C:01E9H         LINE#         6
+  C:01E9H         LINE#         7
+  C:01E9H         LINE#         9
+  C:01F2H         LINE#         10
+  C:01FBH         LINE#         11
+  C:0204H         LINE#         12
   -------         ENDPROC       MAIN
   -------         ENDMOD        MAIN
 
   -------         MODULE        LEDSD
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0080H         PUBLIC        P0
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  09/27/2023  21:33:49  PAGE 4
+
+
   D:0090H         PUBLIC        P1
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
   D:00E8H         PUBLIC        P4
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  09/27/2023  00:45:59  PAGE 4
-
-
   C:00F9H         PUBLIC        _DigitalTubeDisplay_Digit
   D:00A8H         PUBLIC        IE
   D:00B8H         PUBLIC        IP
@@ -190,7 +194,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\LEDSegmentDisplays (DELAY)
   D:0088H         PUBLIC        TCON
   B:00A0H.3       PUBLIC        P23
   B:00A0H.4       PUBLIC        P24
-  C:0210H         SYMBOL        _?ix1000
+  C:022CH         SYMBOL        _?ix1000
   D:00C8H         PUBLIC        T2CON
   D:00D0H         PUBLIC        PSW
   -------         PROC          _DIGITALTUBEDISPLAY_DIGIT
@@ -235,13 +239,13 @@ SYMBOL TABLE OF MODULE:  .\Objects\LEDSegmentDisplays (DELAY)
   C:0162H         LINE#         45
   C:0162H         LINE#         46
   C:0164H         LINE#         47
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  09/27/2023  21:33:49  PAGE 5
+
+
   C:0164H         LINE#         48
   C:0164H         LINE#         49
   C:0164H         LINE#         51
   C:0166H         LINE#         52
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  09/27/2023  00:45:59  PAGE 5
-
-
   C:0168H         LINE#         53
   C:016AH         LINE#         54
   C:016CH         LINE#         55
@@ -268,7 +272,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\LEDSegmentDisplays (DELAY)
   C:0182H         LINE#         79
   C:0182H         LINE#         80
   C:0182H         LINE#         81
-  C:018AH         LINE#         82
+  C:018AH         LINE#         83
+  C:0191H         LINE#         85
+  C:0194H         LINE#         86
   -------         ENDPROC       _DIGITALTUBEDISPLAY_DIGIT
   -------         ENDMOD        LEDSD
 
@@ -279,5 +285,5 @@ SYMBOL TABLE OF MODULE:  .\Objects\LEDSegmentDisplays (DELAY)
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_LED_FLOWING_WATER?LED
 
-Program Size: data=26.0 xdata=0 code=538
+Program Size: data=26.0 xdata=0 code=566
 LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
